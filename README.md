@@ -1,2 +1,4 @@
 # fungitech-solutions
-Repositório - Projeto FungiTech Solutions
+Repositório - FungiTech Solutions
+
+Repositório da FungiTech Solutions para armazenar o Projeto de Pesquisa e Inovação da SPTECH SCHOOL.
