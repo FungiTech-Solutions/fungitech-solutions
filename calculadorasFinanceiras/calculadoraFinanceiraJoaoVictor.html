@@ -25,14 +25,23 @@
 <script>
 
     function qntGanhos() {
-        var prodMensal = Number(inptProducao.value);
-        var dinGanhoMensal = (prodMensal * 27);
-        var perdaMensal = (prodMensal * 0.2);
-        var dinPerdaMensal = (perdaMensal * 27);
-        var dinPerdaAnual = (dinPerdaMensal * 12);
-        var lucroMensalPerda = dinGanhoMensal * 0.8;
-        var lucroAnualComPerda = lucroMensalPerda * 12;
-        var perdaLucro = (lucroAnualComPerda/dinPerdaAnual);
+
+    
+        var prodMensal = Number(inptProducao.value); // Valor do input da produção mensal
+
+        var dinGanhoMensal = (prodMensal * 27); // Dinheiro ganhado mensalmente pelo produto, a 27 reais o kg
+
+        var perdaMensal = (prodMensal * 0.2); // A perda de 20% da produção em kg
+
+        var dinPerdaMensal = (perdaMensal * 27); // Perda de dinheiro mensal 
+
+        var dinPerdaAnual = (dinPerdaMensal * 12); // Perda de dinheiro anual
+
+        var lucroMensalPerda = dinGanhoMensal * 0.8; // Lucro de apenas 80% da produção total
+
+        var lucroAnualComPerda = lucroMensalPerda * 12; // Lucro anual já com a perda dos 20%
+
+        var perdaLucro = (lucroAnualComPerda/dinPerdaAnual); // Calculo que mostra o tempo que demora para o prejuizo atingir o lucro de 1 ano
 
         div_mensagem.innerHTML =
             `Se sua produção mensal é equivalente a ${prodMensal} Kg: <br>
