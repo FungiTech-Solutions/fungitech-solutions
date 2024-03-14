@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Financeira - Murilo Cardoso Martinez</title>
+    <style></style>
+  </head>
+
+  <body>
+    <h1>Calculadora Financeira - FungiTech</h1>
+    <div>
+      Sua produção mensal em Kg:
+      <input id="input_producao" type="text" placeholder="1000 Kg" />
+      <br /><br />
+      <button onclick="calcular()">Quanto eu ganho?</button>
+    </div>
+
+    <div id="mensagem"></div>
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    var producao = Number(input_producao.value); // Pegando o valor do campo de produção
+
+    var ganhoMensal = producao * 27; // Dinheiro ganhado mensalmente pelo produto, vendendo a 27 reais o Kg
+    var perdaMensal = producao * 0.2; // Perda de 20% da produção em Kg
+
+    var perdaMensalDinheiro = perdaMensal * 27; // Perda de dinheiro mensal
+    var perdaAnual = perdaMensalDinheiro * 12; // Perda de dinheiro anual
+
+    var lucroMensalPerda = ganhoMensal * 0.8; // Lucro de apenas 80% da produção total
+    var lucroAnualComPerda = lucroMensalPerda * 12; // Lucro anual já com a perda dos 20%
+
+    mensagem.innerHTML = `Você produz ${producao} Kg de cogumelo por mês.<br>
+                        Lucro mensal de: R$${ganhoMensal.toFixed(1)} se o preço do Kg for vendido por R$27,00 e não tenha uma perda de 20% da produção.<br>
+                        Com a perda dos 20% da produção, a sua perda mensal de cogumelos é de: ${perdaMensal.toFixed(0)} Kg e isso acaba tornando seu lucro mensal de: R$${ganhoMensal.toFixed(1)} para R$${lucroMensalPerda.toFixed(2)}, você tem uma perda de R$${ganhoMensal.toFixed(1) - lucroMensalPerda.toFixed(2)}.<br>
+                        Anualmente você perde: R$${perdaAnual.toFixed(2)}.`;
+  }
+</script>
