@@ -12,8 +12,8 @@ CREATE TABLE usuario (
     senha VARCHAR(25) NOT NULL,
     cep CHAR(8) NOT NULL,
     numeroLogradouro VARCHAR (8) NOT NULL,
-    nivelAcesso VARCHAR(15), CONSTRAINT chkAcesso CHECK (nivelAcesso IN ('Admin', 'Funcionário')),
-	contratacao VARCHAR(20), CONSTRAINT chkContratacao CHECK (contratacao IN ('Contratado', 'Não Contratado'))
+    nomeEmpresa VARCHAR(50) NOT NULL,
+    nivelAcesso VARCHAR(15), CONSTRAINT chkAcesso CHECK (nivelAcesso IN ('Admin', 'Funcionário'))
 );
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
