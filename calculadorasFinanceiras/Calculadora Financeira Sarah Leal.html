@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FungiTech - Calculadora Financeira</title>
+    <style>
+body {
+
+    background-color: brown;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <h1 style="color: rgb(253, 253, 253); text-align: center;">Calculadora Financeira - <br>
+        FungiTech</h1>
+
+</body>
+<div> <center>
+    <h2 style="text-align: center; color: aliceblue;" > Informe sua produção mensal em Kg:</h2> <br>
+    <input  id= "input_producao" type="text"> <br><br>
+    <button onclick="quantidadedeGanhos()" Number>calcular</button> <br><br>
+   </center>
+</div>
+
+<div style="text-align: center;" id="div_mensagem"></div> <br>
+
+
+</html>
+
+<script>
+
+    function quantidadedeGanhos() {
+
+    
+        var producaoMensal = Number(input_producao.value); 
+        var GanhoMensal = (producaoMensal * 27); 
+        var PerdaAnual = (PerdaMensal * 12);
+        var perdaMensal = (producaoMensal * 0.2); 
+        var PerdaMensal = (perdaMensal * 27); 
+        var lucroMensalPerda = GanhoMensal * 0.8; 
+        var lucroAnualComPerda = lucroMensalPerda * 12; 
+
+        div_mensagem.innerHTML =
+    
+            `
+        'Lucro mensal com a cotação do shiitake de R$27,00/Kg para: R$${GanhoMensal} (sem a perda de 20% da produção).<br> <br>
+        Produção mensal é equivalente a ${producaoMensal} Kg: <br> <br>
+        Perda mensal de cogumelos é de: ${perdaMensal} Kg, Lucro mensal de: R$${lucroMensalPerda}. <br> <br>
+        Perda mensal de: R$${PerdaMensal} e anual de: R$${PerdaAnual}. <br> <br>
+        `
+
+    }
+</script>
