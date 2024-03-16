@@ -12,8 +12,8 @@ CREATE TABLE usuario (
     senha VARCHAR(25) NOT NULL,
     nomeEmpresa VARCHAR(50) NOT NULL,
     cepEmpresa CHAR(8) NOT NULL,
-    numeroLogradouro VARCHAR (8) NOT NULL,
-    nivelAcesso VARCHAR(15), CONSTRAINT chkAcesso CHECK (nivelAcesso IN ('Admin', 'Funcionário'))
+    numeroLogradouro VARCHAR(8) NOT NULL,
+    nivelAcesso VARCHAR(15) NOT NULL, CONSTRAINT chkAcesso CHECK (nivelAcesso IN ('Admin', 'Funcionário'))
 );
 
 INSERT INTO usuario VALUES
@@ -25,7 +25,7 @@ INSERT INTO usuario VALUES
 /* --- Cadastro Dispositivo Arduino --- */
 CREATE TABLE dispositivo(
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    idUsuario CHAR(11) NOT NULL, -- FOREIGN KEY(idUsuario)
+    idUsuario INT NOT NULL, -- FOREIGN KEY(idUsuario)
     nomeLocalizacao VARCHAR(50)
 );
 
