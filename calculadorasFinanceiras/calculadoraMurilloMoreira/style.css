@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #c92026;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+b {
+    color: #c92026;
+}
+
+input {
+    width: 145px;
+    height: 20px;
+
+    border-radius: 5px;
+    border: 1px solid #c92026;
+}
+
+button {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #c92026;
+    border-radius: 5px;
+    border: none;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    width: 150px;
+    height: 25px;
+}

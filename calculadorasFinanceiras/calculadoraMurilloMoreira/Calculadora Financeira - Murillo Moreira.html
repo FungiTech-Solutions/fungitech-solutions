@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FungiTech - Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora Financeira - FungiTech</h1>
+
+        <p> Insira a sua produção mensal em Kg:</p>
+
+        <input id="input_qtdProd" type="text" placeholder="Ex.: 550Kg">
+
+        <button onclick="qntGanhos()">Quanto eu ganho?</button> <br><br>
+
+        <div id="div_mensagem"></div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function qntGanhos() {
+        var qtdProd = Number(input_qtdProd.value); // Quantidade produzida mensalmente.
+        var shiitake = 27; //Cotação do Kg do Shiitake
+        var perdaMensal = (qtdProd * 0.2); // Perda de 20% da produção.
+        
+        // Faturamento
+        var fatMensal = (qtdProd * shiitake); // Faturamento mensal do produto.
+
+        //Prejuízos
+        var prejMensal = (perdaMensal * shiitake); // Prejuízo mensal em R$. 
+        var prejAnual = (prejMensal * 12); // Prejuízo anual em R$. 
+
+        //Faturamento com Prejuízos
+        var fatPerdaMensal = fatMensal * 0.8; // faturamento mensal com perda de 20%.
+        var fatPerdaAnual = fatPerdaMensal * 12; // faturamento anual com perda de 20%.
+
+        // Tempo em que Perda == Faturamento Anual
+        var tempoPerdaLucro = (fatPerdaAnual /
+        prejAnual); // Calculo que mostra o tempo que demora para o prejuizo atingir o faturamento de 1 ano
+
+        div_mensagem.innerHTML =
+            `
+        Sua produção mensal é equivalente a <b>${qtdProd}Kg</b>.<br>
+        A cotação do shiitake é de <b>R$27,00/Kg</b>.<br>
+        A média de <b>perda mensal média da produção é de 20%</b>, que equivale a <b>${perdaMensal}Kg</b> da sua produção.<br><br>
+        Com isso, o faturamento que seria de <b>R$${fatMensal}</b> passa a ser de <b>R$${fatPerdaMensal}</b>.<br>
+        Nesse caso, você perde <b>R$${prejMensal}/mês</b>, que equivale a <b>R$${prejAnual}/ano</b>.<br>
+        Portanto, o <b>dinheiro perdido no período de ${tempoPerdaLucro} anos</b> equivale a <b>1 ano de faturamento</b>.`;
+    }
+</script>
