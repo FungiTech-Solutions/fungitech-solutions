@@ -57,35 +57,43 @@
         var perdaMensalP = (producao * perdaCliente) * precoKiloCliente; // Perda de dinheiro mensal
         var perdaAnualP = perdaMensalP * 12; // Perda de dinheiro anual
         var lucroCliente = producao * precoKiloCliente; // Para saber o lucro do cliente com o preço vendido por kilo
-        var lucroLiq = lucroCliente - valorInvestido; // 
+        var lucroLiq = (lucroCliente - valorInvestido); // 
         
+        div_mensagem_mercado.style.display = "block";
+        div_mensagem_cliente.style.display = "block";
+        div_mensagem_comparacao.style.display = "block";
+
         // Valores do mercado
         div_mensagem_mercado.innerHTML = `<h3>Valores do Mercado:</h3>` +
-            `<p>Preço por Kilo: R$${precoKiloMercado}</p>` +
-            `<p>Perda Percentual: ` + (perdaMercado * 100) + `%</p>` +
-            `<p>Lucro Mensal sem Perda: R$${lucroSemPerda}</p>` +
-            `<p>Lucro Mensal com Perda: R$${lucroComPerda}</p>` +
-            `<p>Perda Mensal: R$${perdaMensalM}</p>` +
-            `<p>Perda Anual: R$${perdaAnualM}</p>`;
+            `<p>Preço por Kilo: <b>R$${precoKiloMercado}</b></p>` +
+            `<p>Perda Percentual: <b>` + (perdaMercado * 100) + `%</b></p>` +
+            `<p>Lucro Mensal sem Perda: <b>R$${lucroSemPerda}</b></p>` +
+            `<p>Lucro Mensal com Perda: <b>R$${lucroComPerda}</b></p>` +
+            `<p>Perda Mensal: <b>R$${perdaMensalM}</b></p>` +
+            `<p>Perda Anual: <b>R$${perdaAnualM}</b></p>`;
 
         // Valores do cliente
         div_mensagem_cliente.innerHTML = `<h3>Valores do Cliente:</h3>` +
-            `<p>Lucro Mensal do Cliente: R$${lucroCliente}</p>` +
-            `<p>Lucro Mensal do Cliente com Perda: R$${lucroPerdaCliente}</p>` +
-            `<p>Perda Mensal do Cliente: R$${perdaMensalP}</p>` +
-            `<p>Perda Anual do Cliente: R$${perdaAnualP}</p>` +
-            `<p>Lucro Líquido: R$${lucroLiq}</p>`;
+            `<p>A produção  mensal foi de <b>${producao}kg</b></p>` +
+            `<p>O preço vendido pelo kilo do cogumelo foi de <b>R$${precoKiloCliente}</b></p>` +
+            `<p>O valor investido na produção foi de <b>R$${valorInvestido}</b></p>` +
+            `<p>A perda percentual foi de <b>${perda}%</b></p>` +
+            `<p>Lucro Mensal do Cliente: <b class="positivo">R$${lucroCliente}</b></p>` +
+            `<p>Lucro Mensal do Cliente com Perda: <b class="positivo">R$${lucroPerdaCliente}</b></p>` +
+            `<p>Perda Mensal do Cliente: <b class="negativo">R$${perdaMensalP}</b></p>` +
+            `<p>Perda Anual do Cliente: <b class="negativo">R$${perdaAnualP}</b></p>` +
+            `<p>Lucro Líquido: <b class="positivo">R$${lucroLiq}</b></p>`;
 
         // Comparação
         if (perdaMensalM > perdaMensalP) {
-            div_mensagem_comparacao.innerHTML = `<h4 style="color: green;">Sua perda foi menor que a do mercado</h4>`;
+            div_mensagem_comparacao.innerHTML = `<h4 class="positivo">Sua perda foi menor que a do mercado</h4>`;
         } else {
-            div_mensagem_comparacao.innerHTML = `<h4 style="color: red;">Sua perda foi maior que a do mercado</h4>`;
+            div_mensagem_comparacao.innerHTML = `<h4 class="negativo">Sua perda foi maior que a do mercado</h4>`;
         }
         if (lucroTotal > lucroLiq) {
-            div_mensagem_comparacao.innerHTML += `<br> <h4 style="color: red;">Seu lucro foi inferior ao do mercado</h4>`;
+            div_mensagem_comparacao.innerHTML += `<br> <h4 class="negativo">Seu lucro foi inferior ao do mercado</h4>`;
         } else {
-            div_mensagem_comparacao.innerHTML += `<br><h4 style="color: green;"> Seu lucro foi superior ao do mercado</h4>`;
+            div_mensagem_comparacao.innerHTML += `<br><h4 class="positivo"> Seu lucro foi superior ao do mercado</h4>`;
         }
     }
 </script>
