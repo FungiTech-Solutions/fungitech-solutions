@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <center> <font color="red"> <h1>Calculadora Financeira</h1></font></center>
+
+    <br>
+    <div class="input-group mb-3">
+        <input id="input_prod" type="text" class="form-control" placeholder="Insira quantos kilos foi produzido mensalmente" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+        <button onclick="ganhos()" class="btn btn-success">Calcular</button>
+    </div>
+
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function ganhos() {
+
+    
+        var prodMensal = Number(input_prod.value); // Valor do input da produção mensal
+
+        var perdaCogu = (prodMensal * 0.2); //Perda mensal em Kilos de Shiitake
+
+        var dinGanhoMensal = (prodMensal * 27); // Dinheiro ganhado mensalmente pelo produto, a 27 reais o kg
+
+        var perdaMensal = (prodMensal * 0.2); // A perda de 20% da produção em kg
+
+        var dinPerdaMensal = (perdaMensal * 27); // Perda de dinheiro mensal 
+
+        var dinPerdaAnual = (dinPerdaMensal * 12); // Perda de dinheiro anual
+
+        var lucroMensalPerda = dinGanhoMensal * 0.8; // Lucro de apenas 80% da produção total
+
+        var lucroAnualComPerda = lucroMensalPerda * 12; // Lucro anual já com a perda dos 20%
+
+        var perdaLucro = (lucroAnualComPerda/dinPerdaAnual); // Calculo que mostra o tempo que demora para o prejuizo atingir o lucro de 1 ano
+
+        div_mensagem.innerHTML =
+            `Sua produção mensal é: ${prodMensal} Kg: <br>
+        Seu lucro mensal com a cotação do shiitake  equivalente a R$27,00/Kg será de: R$${dinGanhoMensal} caso não houvesse uma perda de em média 20% da produção.<br>
+        Sua perda média mensal de cogumelos que não se desenvolveram bem é de: ${perdaMensal} Kg, tornando seu lucro mensal de: R$${lucroMensalPerda}. <br>
+        Você perde mensalmente: ${perdaCogu} Kgs de Shiitake, R$${dinPerdaMensal} e anualmente: R$${dinPerdaAnual}. <br>
+        O tempo que demora para a perda se tornar equivalente ao lucro de 1 ano é de: ${perdaLucro} anos.`
+
+    }
+</script>
+
+
+
+</script>
