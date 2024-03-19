@@ -1,0 +1,80 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 400px;
+    height: 150px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container-mensagem{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    color: #c92026;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #c92026;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    display: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    align-items: center;
+    margin-left: 10px;
+    padding: 20px;
+    
+}
+
+
+.positivo{
+    color: green
+}
+
+.negativo{
+    color: red;
+}
