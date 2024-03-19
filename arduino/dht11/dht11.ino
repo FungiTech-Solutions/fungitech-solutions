@@ -2,7 +2,7 @@
 #include "DHT.h"
 #define dht_type DHT11
 
-// Declaração das Variáveis 
+// Declaração das Variáveis
 int dht_pin = A0;
 DHT dht_1 = DHT(dht_pin, dht_type);
 
@@ -17,11 +17,11 @@ void loop() {
   // Variáveis com Cálculo de Temperatura e Umidade Adaptadas para o Ambiente
   float umidade = dht_1.readHumidity() + 20;
   float temperatura = dht_1.readTemperature() - 7;
-  
+
   // Verifica se a Temperatura e a Umidade não são números
-  if(isnan(temperatura) or isnan(umidade)){
-    Serial.println("Erro ao ler"); 
-  } 
+  if (isnan(temperatura) or isnan(umidade)) {
+    Serial.println("Erro ao ler");
+  }
   else {
     // Exbição dos Dados
     Serial.print(umidade);
