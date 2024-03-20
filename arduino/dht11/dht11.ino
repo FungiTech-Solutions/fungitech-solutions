@@ -24,9 +24,13 @@ void loop() {
   }
   else {
     // Exbição dos Dados
+    Serial.print(" Umidade: ");
     Serial.print(umidade);
+    Serial.print("%");
     Serial.print(" ; ");
+    Serial.print(" Temperatura: ");
     Serial.println(temperatura);
+    Serial.print(" °C");
   }
   delay(1500); // Intervalo de Captura em Milisegundos
 }
