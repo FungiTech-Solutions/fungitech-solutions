@@ -85,11 +85,11 @@
             `<p>Lucro Líquido: <b class="positivo">R$${lucroLiq}</b></p>`;
 
         // Comparação
-        var comparacao = (perdaMensalM - perdaMensalP) / 100
-        var comparacao2 = (perdaMensalP - perdaMensalM) / 100
+        var comparacao = (((perdaMercado * 100) - (perdaCliente * 100)))
+        var comparacao2 = (((perdaCliente * 100) - (perdaMercado * 100)))
         var comparacao3 = (lucroTotal - lucroLiq) / 100
         var comparacao4 = (lucroLiq - lucroTotal) / 100
-        if (perdaMensalM > perdaMensalP) {
+        if (perdaMercado > perdaCliente) {
             div_mensagem_comparacao.innerHTML = `<h4 class="positivo">Sua perda foi menor que a do mercado em ${comparacao}%</h4>`;
         } else {
             div_mensagem_comparacao.innerHTML = `<h4 class="negativo">Sua perda foi maior que a do mercado em ${comparacao2}%</h4>`;
